@@ -99,6 +99,7 @@ body {
   display: flex;
   position: relative;
   flex-wrap: wrap;
+  align-items: center;
   max-width: 738px;
 }
 
