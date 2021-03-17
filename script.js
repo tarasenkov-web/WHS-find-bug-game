@@ -1,20 +1,20 @@
 (function () {
  	const button = document.querySelector('.game-menu-button');
- 	const value1 = document.getElementById('level1');
- 	const value2 = document.getElementById('level2');
- 	const value3 = document.getElementById('level3');
- 	let value = value1.value;
+ 	const level1 = document.getElementById('level1');
+ 	const level2 = document.getElementById('level2');
+ 	const level3 = document.getElementById('level3');
+ 	let value = level1.value;
 
- 	value1.onclick = function() {
- 		value = value1.value;
+ 	level1.onclick = function() {
+ 		value = level1.value;
  	}
 
- 	value2.onclick = function() {
- 		value = value2.value;
+ 	level2.onclick = function() {
+ 		value = level2.value;
  	}
 
- 	value3.onclick = function() {
- 		value = value3.value;
+ 	level3.onclick = function() {
+ 		value = level3.value;
  	}
 
  	function randomInteger(min, max) {
@@ -32,6 +32,7 @@
     			'</div>' +
 			'</div>';
  		let div = document.createElement('div');
+ 		
  		div.className = 'flip-card';
  		div.innerHTML = html;
  		deck.append(div);
@@ -55,6 +56,7 @@
  	function flipping() {
  		let flipCard = document.querySelectorAll('.flip-card');
  		let isFlipped = false;
+
  		for (let i = 0; i < flipCard.length; i++) {
   				flipCard[i].addEventListener('click', function() {
   					if (isFlipped == true) {
