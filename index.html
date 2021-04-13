@@ -3,7 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 	<title>Card game</title>
 </head>
 <body class="game">
@@ -11,21 +13,26 @@
 	<div class="game-menu">
 		<div class="game-menu-title">
 			<span>Выберите уровень сложности:</span>
-			<span class="game-menu-desc">Выберите сложность и игра начнется. Чем выше уровень - тем больше будет выборка карт.</span>
+			<span class="game-menu-title-desc">Выберите сложность и игра начнется. Чем выше уровень - тем больше будет выборка карт.</span>
 		</div>
-		<ul class="game-menu-l">
-			<li class="game-menu-i">Простой</li>
-			<li class="game-menu-i">Средний</li>
-			<li class="game-menu-i">Сложный</li>
-		</ul>
-		<div class="game-menu-button"></div>
-	</div>
+		<div class="game-menu-level">
+			<input type="radio" id="level1" name="level" value="простой" checked>
+			<label for="level1" class="game-menu-value">Простой</label>
 
-	<div class="game-deck">
-		<img src="" class="game-deck-card" />
-		<img src="" class="game-deck-card" />
-		<img src="" class="game-deck-card" />
-	</div>
+			<input type="radio" id="level2" name="level" value="средний">
+			<label for="level2" class="game-menu-value">Средний</label>
 
+			<input type="radio" id="level3" name="level" value="cложный">
+			<label for="level3" class="game-menu-value">Сложный</label>
+		</div>
+		<div class="game-menu-button">Начать игру</div>
+		<div class="game-menu-deck">
+			<img src="src/card.png" class="game-menu-deck-card" />
+			<img src="src/card.png" class="game-menu-deck-card" />
+	</div>
+	</div>
+	
+
+	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>

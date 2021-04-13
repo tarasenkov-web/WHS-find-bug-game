@@ -1,0 +1,145 @@
+$white: #ffffff
+$red: #D62B2E
+
+*
+	box-sizing: border-box
+
+body
+	margin: 0px
+	font-family: 'Roboto', sans-serif
+	font-weight: bold
+	color: $white
+
+.game
+	display: flex
+	width: 100%
+	height: 100vh
+	min-height: 600px
+	background-image: url(../src/background.png)
+
+	&-menu
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		min-width: 700px
+		margin: 120px 0px 120px 100px
+
+		&-title
+			display: flex
+			flex-direction: column
+			font-size: 57px
+
+			&-desc
+				font-size: 19px
+
+		&-level
+			display: flex
+			flex-direction: column
+			margin: 50px 0px 70px
+			font-size: 50px
+			
+			input
+				display: none
+
+			input[type=radio]:checked + label::before
+				content: ''
+
+		&-value
+			display: flex
+			position: relative
+			padding-left: 48px
+			margin: 10px 0px
+			cursor: pointer
+
+			&::before
+				position: absolute
+				top: 0px
+				left: 0px
+				bottom: 0px
+				margin: auto
+				width: 18px
+				height: 18px
+				background-color: $red
+				transform:  rotate(45deg)
+
+		&-button
+			display: flex
+			flex-shrink: 0
+			justify-content: center
+			align-items: center
+			width: 350px
+			height: 95px
+			padding: 10px
+			border-radius: 7px
+			font-size: 32px
+			background-color: $red
+
+			&:hover
+				border: 2px solid $white
+				cursor: pointer
+
+	&-menu-deck
+		display: flex
+		align-self: flex-end
+		position: relative
+
+		&-card
+			position: absolute
+			left: -58px
+			bottom: -33px
+
+		&>img
+			transform: rotate(15deg)
+
+		&>img:last-child
+			left: 122px
+			bottom: -52px
+			transform: rotate(39deg)
+
+	&-deck
+		display: flex
+		position: relative
+		flex-wrap: wrap
+		align-items: center
+		max-width: 738px
+
+.flip-card
+	width: 222px
+	height: 345px
+	margin: 12px
+	perspective: 1000px
+
+	&:not(.flipped):hover
+		animation-name: card-move
+		animation-duration: .3s
+		animation-fill-mode: forwards
+		animation-timing-function: linear
+
+	&-inner
+		position: relative
+		width: 100%
+		height: 100%
+		transition: transform 0.8s
+		transform-style: preserve-3d
+
+	&.flipped .flip-card-inner
+		transform: rotateY(180deg)
+
+	&-front,
+	&-back
+		position: absolute
+		width: 100%
+		height: 100%
+		-webkit-backface-visibility: hidden /* Safari */
+		backface-visibility: hidden
+
+	&-back
+		transform: rotateY(180deg)
+
+@keyframes card-move
+	50%
+		transform: rotate(5deg)
+		animation-timing-function: ease-in
+
+	100% 
+		transform: rotate(0deg) translateY(-10px)
